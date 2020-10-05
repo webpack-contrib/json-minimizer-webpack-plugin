@@ -30,6 +30,19 @@ describe('JsonMinimizerPlugin', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
+  it('should work with array', async () => {
+    const testJsonId = './array.json';
+    const compiler = getCompiler(testJsonId);
+
+    new JsonMinimizerPlugin().apply(compiler);
+
+    const stats = await compile(compiler);
+
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
   it('should work with an empty file', async () => {
     const testJsonId = './empty.json';
     const compiler = getCompiler(testJsonId);

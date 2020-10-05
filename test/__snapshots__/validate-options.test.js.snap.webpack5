@@ -93,7 +93,7 @@ exports[`validation 6`] = `
 exports[`validation 7`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.minimizerOptions should be an object:
-   object { … }
+   object { replacer?, space? }
    -> Options for \`jsonMinimizerOptions\`."
 `;
 
