@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JsonMinimizerPlugin should emit error when broken json syntax: errors 1`] = `
+Array [
+  "Error: broken-json-syntax.json in \\"/test/fixtures\\" from Json Minimizer
+SyntaxError: Unexpected token s in JSON at position 4",
+]
+`;
+
+exports[`JsonMinimizerPlugin should emit error when broken json syntax: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work (without options): assets 1`] = `
+Object {
+  "simple.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work (without options): errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work (without options): warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": assets 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": errors 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": result 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and do not use memory cache when the "cache" option is "false": warnings 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: assets 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: errors 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: result 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use cache by default in "development" mode: warnings 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: assets 1`] = `
+Object {
+  "cache-1.json": "{\\"modified\\":true}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"modified\\":true}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: errors 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: result 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true" and the asset has been changed: warnings 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": assets 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": errors 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": result 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache when the "cache" option is "true": warnings 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: assets 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: errors 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: result 1`] = `
+Object {
+  "cache-1.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-2.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-3.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache-4.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+  "cache.json": "{\\"squadName\\":\\"Super hero squad\\",\\"homeTown\\":\\"Metro City\\",\\"formed\\":2016,\\"secretBase\\":\\"Super tower\\",\\"active\\":true,\\"members\\":[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work and use memory cache: warnings 2`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work with an empty file: assets 1`] = `Object {}`;
+
+exports[`JsonMinimizerPlugin should work with an empty file: errors 1`] = `
+Array [
+  "Error: unable to locate \\"empty.json\\" at \\"/test/fixtures/empty.json\\"",
+]
+`;
+
+exports[`JsonMinimizerPlugin should work with an empty file: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work with child compilation: assets 1`] = `
+Object {
+  "simple.json": "{\\"x\\":5}",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work with child compilation: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work with child compilation: warnings 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work without files: assets 1`] = `
+Object {
+  "simple.json": "{
+  \\"squadName\\": \\"Super hero squad\\",
+  \\"homeTown\\": \\"Metro City\\",
+  \\"formed\\": 2016,
+  \\"secretBase\\": \\"Super tower\\",
+  \\"active\\": true,
+  \\"members\\": [
+    {
+      \\"name\\": \\"Molecule Man\\",
+      \\"age\\": 29,
+      \\"secretIdentity\\": \\"Dan Jukes\\",
+      \\"powers\\": [
+        \\"Radiation resistance\\",
+        \\"Turning tiny\\",
+        \\"Radiation blast\\"
+      ]
+    },
+    {
+      \\"name\\": \\"Madame Uppercut\\",
+      \\"age\\": 39,
+      \\"secretIdentity\\": \\"Jane Wilson\\",
+      \\"powers\\": [
+        \\"Million tonne punch\\",
+        \\"Damage resistance\\",
+        \\"Superhuman reflexes\\"
+      ]
+    },
+    {
+      \\"name\\": \\"Eternal Flame\\",
+      \\"age\\": 1000000,
+      \\"secretIdentity\\": \\"Unknown\\",
+      \\"powers\\": [
+        \\"Immortality\\",
+        \\"Heat Immunity\\",
+        \\"Inferno\\",
+        \\"Teleportation\\",
+        \\"Interdimensional travel\\"
+      ]
+    }
+  ]
+}
+",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work without files: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work without files: warnings 1`] = `Array []`;

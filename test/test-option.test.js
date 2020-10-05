@@ -1,0 +1,60 @@
+import JsonMinimizerPlugin from '../src/index';
+
+import {
+  compile,
+  getCompiler,
+  getErrors,
+  getWarnings,
+  readAssets,
+  removeCache,
+} from './helpers';
+
+describe('when applied with "test" option', () => {
+  let compiler;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+
+    const testJsonId = './test/foo-[0-4].json';
+
+    compiler = getCompiler(testJsonId);
+
+    return Promise.all([removeCache()]);
+  });
+
+  afterEach(() => Promise.all([removeCache()]));
+
+  it('matches snapshot with empty value', async () => {
+    new JsonMinimizerPlugin().apply(compiler);
+
+    const stats = await compile(compiler);
+
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
+  it('matches snapshot for a single "test" value (RegExp)', async () => {
+    new JsonMinimizerPlugin({
+      test: /foo-[1-3]\.json/,
+    }).apply(compiler);
+
+    const stats = await compile(compiler);
+
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
+  it('matches snapshot for multiple "test" value (RegExp)', async () => {
+    new JsonMinimizerPlugin({
+      test: [/foo-[0]\.json/, /foo-[1-2]\.json/],
+    }).apply(compiler);
+
+    const stats = await compile(compiler);
+
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+});
