@@ -44,7 +44,7 @@ class JsonMinimizerPlugin {
 
   static buildError(error, file, context) {
     return new Error(
-      `${file} in "${context}" from Json Minimizer\n${error.stack}`
+      `"${file}" in "${context}" from Json Minimizer:\n${error}`
     );
   }
 
@@ -71,20 +71,18 @@ class JsonMinimizerPlugin {
   }
 
   async optimize(compiler, compilation, assets, CacheEngine, weakCache) {
-    const matchObject = ModuleFilenameHelpers.matchObject.bind(
-      // eslint-disable-next-line no-undefined
-      undefined,
-      this.options
-    );
-
     const assetNames = Object.keys(
       typeof assets === 'undefined' ? compilation.assets : assets
-    ).filter((assetName) => matchObject(assetName));
+    ).filter((assetName) =>
+      // eslint-disable-next-line no-undefined
+      ModuleFilenameHelpers.matchObject.bind(undefined, this.options)(assetName)
+    );
 
     if (assetNames.length === 0) {
       return Promise.resolve();
     }
 
+    const scheduledTasks = [];
     const cache = new CacheEngine(
       compilation,
       {
@@ -93,14 +91,12 @@ class JsonMinimizerPlugin {
       weakCache
     );
 
-    const scheduledTasks = [];
-
-    for (const assetName of assetNames) {
+    for (const name of assetNames) {
       scheduledTasks.push(
         (async () => {
-          const { source: assetSource, info } = JsonMinimizerPlugin.getAsset(
+          const { source: inputSource, info } = JsonMinimizerPlugin.getAsset(
             compilation,
-            assetName
+            name
           );
 
           // Skip double minimize assets from child compilation
@@ -108,33 +104,34 @@ class JsonMinimizerPlugin {
             return;
           }
 
-          let input = assetSource.source();
+          let input = inputSource.source();
 
           if (Buffer.isBuffer(input)) {
             input = input.toString();
           }
 
-          const cacheData = { assetName, assetSource };
+          const cacheData = { inputSource };
 
           if (JsonMinimizerPlugin.isWebpack4()) {
             if (this.options.cache) {
               cacheData.input = input;
               cacheData.cacheKeys = this.options.cacheKeys(
                 {
-                  nodeVersion: process.version,
                   // eslint-disable-next-line global-require
                   'json-minimizer-webpack-plugin': require('../package.json')
                     .version,
                   'json-minimizer-webpack-plugin-options': this.options,
-                  assetName,
+                  name,
                   contentHash: crypto
                     .createHash('md4')
                     .update(input)
                     .digest('hex'),
                 },
-                assetName
+                name
               );
             }
+          } else {
+            cacheData.name = name;
           }
 
           let output = await cache.get(cacheData, { RawSource });
@@ -142,7 +139,6 @@ class JsonMinimizerPlugin {
           if (!output) {
             try {
               const minimizerOptions = {
-                assetName,
                 input,
                 minimizerOptions: this.options.minimizerOptions,
                 minify: this.options.minify,
@@ -151,11 +147,7 @@ class JsonMinimizerPlugin {
               output = await minifyFn(minimizerOptions);
             } catch (error) {
               compilation.errors.push(
-                JsonMinimizerPlugin.buildError(
-                  error,
-                  assetName,
-                  compiler.context
-                )
+                JsonMinimizerPlugin.buildError(error, name, compiler.context)
               );
 
               return;
@@ -166,15 +158,11 @@ class JsonMinimizerPlugin {
             await cache.store({ ...output, ...cacheData });
           }
 
-          JsonMinimizerPlugin.updateAsset(
-            compilation,
-            assetName,
-            output.source,
-            {
-              ...info,
-              minimized: true,
-            }
-          );
+          // TODO `...` required only for webpack@4
+          JsonMinimizerPlugin.updateAsset(compilation, name, output.source, {
+            ...info,
+            minimized: true,
+          });
         })()
       );
     }

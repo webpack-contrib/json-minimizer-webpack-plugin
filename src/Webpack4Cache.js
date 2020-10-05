@@ -20,15 +20,15 @@ export default class Webpack4Cache {
   }
 
   async get(cacheData, sources) {
-    const weakOutput = this.weakCache.get(cacheData.assetSource);
-
-    if (weakOutput) {
-      return weakOutput;
-    }
-
     if (!this.cache) {
       // eslint-disable-next-line no-undefined
       return undefined;
+    }
+
+    const weakOutput = this.weakCache.get(cacheData.inputSource);
+
+    if (weakOutput) {
+      return weakOutput;
     }
 
     // eslint-disable-next-line no-param-reassign
@@ -55,8 +55,8 @@ export default class Webpack4Cache {
       return undefined;
     }
 
-    if (!this.weakCache.has(cacheData.assetSource)) {
-      this.weakCache.set(cacheData.assetSource, cacheData);
+    if (!this.weakCache.has(cacheData.inputSource)) {
+      this.weakCache.set(cacheData.inputSource, cacheData);
     }
 
     const { cacheIdent, source } = cacheData;
