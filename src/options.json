@@ -31,6 +31,10 @@
           "$ref": "#/definitions/Rule"
         }
       ]
+    },
+    "StringPattern": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "title": "JsonMinimizerWebpackPluginOptions",
@@ -62,8 +66,46 @@
     },
     "minimizerOptions": {
       "description": "Options for `jsonMinimizerOptions`.",
-      "additionalProperties": true,
-      "type": "object"
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "replacer": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "instanceof": "Function"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/StringPattern"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "space": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/StringPattern"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
     },
     "cache": {
       "description": "Enable file caching. Ignored in webpack 5, for webpack 5 please use https://webpack.js.org/configuration/other-options/#cache.",

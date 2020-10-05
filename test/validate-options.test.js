@@ -103,6 +103,30 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { replacer: ['test', 2] } });
+  }).not.toThrow();
+
+  expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { replacer: () => {} } });
+  }).not.toThrow();
+
+  expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { replacer: null } });
+  }).not.toThrow();
+
+  expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { space: 2 } });
+  }).not.toThrow();
+
+  expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { space: '  ' } });
+  }).not.toThrow();
+
+  expect(() => {
+    new JsonMinimizerPlugin({ minimizerOptions: { space: null } });
+  }).not.toThrow();
+
+  expect(() => {
     new JsonMinimizerPlugin({ minimizerOptions: null });
   }).toThrowErrorMatchingSnapshot();
 

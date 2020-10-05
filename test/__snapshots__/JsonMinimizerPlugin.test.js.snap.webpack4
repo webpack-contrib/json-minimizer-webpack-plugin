@@ -169,6 +169,16 @@ Array [
 
 exports[`JsonMinimizerPlugin should work with an empty file: warnings 1`] = `Array []`;
 
+exports[`JsonMinimizerPlugin should work with array: assets 1`] = `
+Object {
+  "array.json": "[{\\"name\\":\\"Molecule Man\\",\\"age\\":29,\\"secretIdentity\\":\\"Dan Jukes\\",\\"powers\\":[\\"Radiation resistance\\",\\"Turning tiny\\",\\"Radiation blast\\"]},{\\"name\\":\\"Madame Uppercut\\",\\"age\\":39,\\"secretIdentity\\":\\"Jane Wilson\\",\\"powers\\":[\\"Million tonne punch\\",\\"Damage resistance\\",\\"Superhuman reflexes\\"]},{\\"name\\":\\"Eternal Flame\\",\\"age\\":1000000,\\"secretIdentity\\":\\"Unknown\\",\\"powers\\":[\\"Immortality\\",\\"Heat Immunity\\",\\"Inferno\\",\\"Teleportation\\",\\"Interdimensional travel\\"]}]",
+}
+`;
+
+exports[`JsonMinimizerPlugin should work with array: errors 1`] = `Array []`;
+
+exports[`JsonMinimizerPlugin should work with array: warnings 1`] = `Array []`;
+
 exports[`JsonMinimizerPlugin should work with child compilation: assets 1`] = `
 Object {
   "simple.json": "{\\"x\\":5}",
