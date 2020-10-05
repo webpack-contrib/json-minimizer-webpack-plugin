@@ -153,7 +153,7 @@ class JsonMinimizerPlugin {
               return;
             }
 
-            output.source = new RawSource(output.json);
+            output.source = new RawSource(output.output);
 
             await cache.store({ ...output, ...cacheData });
           }
