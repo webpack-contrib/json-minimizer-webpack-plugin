@@ -12,9 +12,7 @@ const minify = async (options) => {
 
   const result = JSON.stringify(JSON.parse(input), replacer, space);
 
-  return {
-    json: result,
-  };
+  return { output: result };
 };
 
 module.exports.minify = minify;

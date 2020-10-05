@@ -2,7 +2,7 @@
 
 exports[`JsonMinimizerPlugin should emit error when broken json syntax: errors 1`] = `
 Array [
-  "Error: broken-json-syntax.json in \\"/test/fixtures\\" from Json Minimizer
+  "Error: \\"broken-json-syntax.json\\" in \\"/test/fixtures\\" from Json Minimizer:
 SyntaxError: Unexpected token s in JSON at position 4",
 ]
 `;
