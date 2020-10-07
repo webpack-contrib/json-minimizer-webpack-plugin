@@ -1,6 +1,6 @@
 {
   "name": "json-minimizer-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "json minimizer plugin for Webpack",
   "license": "MIT",
   "repository": "webpack-contrib/json-minimizer-webpack-plugin",
