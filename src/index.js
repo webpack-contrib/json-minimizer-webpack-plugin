@@ -5,7 +5,7 @@ import webpack, {
   version as webpackVersion,
 } from 'webpack';
 
-import validateOptions from 'schema-utils';
+import { validate } from 'schema-utils';
 
 import schema from './options.json';
 
@@ -18,7 +18,7 @@ const { RawSource } =
 
 class JsonMinimizerPlugin {
   constructor(options = {}) {
-    validateOptions(schema, options, {
+    validate(schema, options, {
       name: 'Json Minimizer Plugin',
       baseDataPath: 'options',
     });
