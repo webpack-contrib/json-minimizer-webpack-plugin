@@ -46,7 +46,6 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });

@@ -78,7 +78,7 @@ class JsonMinimizerPlugin {
           let { output } = asset;
           let input;
 
-          const { source: sourceFromInputSource } = inputSource.sourceAndMap();
+          const sourceFromInputSource = inputSource.source();
 
           if (!output) {
             input = sourceFromInputSource;
@@ -103,7 +103,7 @@ class JsonMinimizerPlugin {
               return;
             }
 
-            output.source = new RawSource(output.output);
+            output.source = new RawSource(output.code);
 
             await cacheItem.storePromise({
               source: output.source,
@@ -134,7 +134,7 @@ class JsonMinimizerPlugin {
       });
 
       hooks.chunkHash.tap(pluginName, (chunk, hash) => {
-        hash.update('CssMinimizerPlugin');
+        hash.update('JsonMinimizerPlugin');
         hash.update(data);
       });
 

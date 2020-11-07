@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JsonMinimizerPlugin should emit error when an empty file: assets 1`] = `
-Object {
-  "empty.json": "Error: ENOENT: no such file or directory, open '/media/veracrypt1/OS/json-minimizer-webpack-plugin/test/dist/empty.json'",
-}
-`;
-
 exports[`JsonMinimizerPlugin should emit error when an empty file: errors 1`] = `
 Array [
   "Error: \\"empty.json\\" in \\"/test/fixtures\\" from Json Minimizer:
