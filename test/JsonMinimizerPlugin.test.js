@@ -38,7 +38,7 @@ describe('JsonMinimizerPlugin', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
-  it('should work with an empty file', async () => {
+  it('should emit error when an empty file', async () => {
     const testJsonId = './empty.json';
     const compiler = getCompiler(testJsonId);
 
