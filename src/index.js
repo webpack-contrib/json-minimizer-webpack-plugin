@@ -26,16 +26,12 @@ class JsonMinimizerPlugin {
     const {
       minimizerOptions = {},
       test = /\.json(\?.*)?$/i,
-      cache = true,
-      cacheKeys = (defaultCacheKeys) => defaultCacheKeys,
       include,
       exclude,
     } = options;
 
     this.options = {
       test,
-      cache,
-      cacheKeys,
       include,
       exclude,
       minimizerOptions,

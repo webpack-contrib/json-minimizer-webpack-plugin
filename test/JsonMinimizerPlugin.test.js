@@ -8,15 +8,10 @@ import {
   getErrors,
   getWarnings,
   readAssets,
-  removeCache,
   ModifyExistingAsset,
 } from './helpers';
 
 describe('JsonMinimizerPlugin', () => {
-  beforeEach(() => Promise.all([removeCache()]));
-
-  afterEach(() => Promise.all([removeCache()]));
-
   it('should work (without options)', async () => {
     const testJsonId = './simple.json';
     const compiler = getCompiler(testJsonId);
@@ -125,15 +120,7 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    if (getCompiler.isWebpack4()) {
-      expect(
-        Object.keys(stats.compilation.assets).filter((assetName) => {
-          return stats.compilation.assets[assetName].emitted;
-        }).length
-      ).toBe(6);
-    } else {
-      expect(stats.compilation.emittedAssets.size).toBe(6);
-    }
+    expect(stats.compilation.emittedAssets.size).toBe(6);
 
     expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
@@ -142,15 +129,7 @@ describe('JsonMinimizerPlugin', () => {
     await new Promise(async (resolve) => {
       const newStats = await compile(compiler);
 
-      if (getCompiler.isWebpack4()) {
-        expect(
-          Object.keys(newStats.compilation.assets).filter((assetName) => {
-            return newStats.compilation.assets[assetName].emitted;
-          }).length
-        ).toBe(0);
-      } else {
-        expect(newStats.compilation.emittedAssets.size).toBe(0);
-      }
+      expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
         'assets'
@@ -165,9 +144,7 @@ describe('JsonMinimizerPlugin', () => {
   it('should work and use memory cache', async () => {
     const testJsonId = false;
     const compiler = getCompiler(testJsonId, {
-      ...(getCompiler.isWebpack4()
-        ? { cache: true }
-        : { cache: { type: 'memory' } }),
+      cache: { type: 'memory' },
       entry: {
         foo: path.resolve(__dirname, './fixtures/cache.js'),
       },
@@ -177,15 +154,7 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    if (getCompiler.isWebpack4()) {
-      expect(
-        Object.keys(stats.compilation.assets).filter((assetName) => {
-          return stats.compilation.assets[assetName].emitted;
-        }).length
-      ).toBe(6);
-    } else {
-      expect(stats.compilation.emittedAssets.size).toBe(6);
-    }
+    expect(stats.compilation.emittedAssets.size).toBe(6);
 
     expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
@@ -194,15 +163,7 @@ describe('JsonMinimizerPlugin', () => {
     await new Promise(async (resolve) => {
       const newStats = await compile(compiler);
 
-      if (getCompiler.isWebpack4()) {
-        expect(
-          Object.keys(newStats.compilation.assets).filter((assetName) => {
-            return newStats.compilation.assets[assetName].emitted;
-          }).length
-        ).toBe(0);
-      } else {
-        expect(newStats.compilation.emittedAssets.size).toBe(0);
-      }
+      expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
         'assets'
@@ -227,15 +188,7 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    if (getCompiler.isWebpack4()) {
-      expect(
-        Object.keys(stats.compilation.assets).filter((assetName) => {
-          return stats.compilation.assets[assetName].emitted;
-        }).length
-      ).toBe(6);
-    } else {
-      expect(stats.compilation.emittedAssets.size).toBe(6);
-    }
+    expect(stats.compilation.emittedAssets.size).toBe(6);
 
     expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
@@ -244,15 +197,7 @@ describe('JsonMinimizerPlugin', () => {
     await new Promise(async (resolve) => {
       const newStats = await compile(compiler);
 
-      if (getCompiler.isWebpack4()) {
-        expect(
-          Object.keys(newStats.compilation.assets).filter((assetName) => {
-            return newStats.compilation.assets[assetName].emitted;
-          }).length
-        ).toBe(0);
-      } else {
-        expect(newStats.compilation.emittedAssets.size).toBe(0);
-      }
+      expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
         'assets'
@@ -277,15 +222,7 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    if (getCompiler.isWebpack4()) {
-      expect(
-        Object.keys(stats.compilation.assets).filter((assetName) => {
-          return stats.compilation.assets[assetName].emitted;
-        }).length
-      ).toBe(6);
-    } else {
-      expect(stats.compilation.emittedAssets.size).toBe(6);
-    }
+    expect(stats.compilation.emittedAssets.size).toBe(6);
 
     expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
@@ -297,15 +234,7 @@ describe('JsonMinimizerPlugin', () => {
     await new Promise(async (resolve) => {
       const newStats = await compile(compiler);
 
-      if (getCompiler.isWebpack4()) {
-        expect(
-          Object.keys(newStats.compilation.assets).filter((assetName) => {
-            return newStats.compilation.assets[assetName].emitted;
-          }).length
-        ).toBe(2);
-      } else {
-        expect(newStats.compilation.emittedAssets.size).toBe(2);
-      }
+      expect(newStats.compilation.emittedAssets.size).toBe(2);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
         'assets'
@@ -330,15 +259,7 @@ describe('JsonMinimizerPlugin', () => {
 
     const stats = await compile(compiler);
 
-    if (getCompiler.isWebpack4()) {
-      expect(
-        Object.keys(stats.compilation.assets).filter((assetName) => {
-          return stats.compilation.assets[assetName].emitted;
-        }).length
-      ).toBe(6);
-    } else {
-      expect(stats.compilation.emittedAssets.size).toBe(6);
-    }
+    expect(stats.compilation.emittedAssets.size).toBe(6);
 
     expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
@@ -347,15 +268,7 @@ describe('JsonMinimizerPlugin', () => {
     await new Promise(async (resolve) => {
       const newStats = await compile(compiler);
 
-      if (getCompiler.isWebpack4()) {
-        expect(
-          Object.keys(newStats.compilation.assets).filter((assetName) => {
-            return newStats.compilation.assets[assetName].emitted;
-          }).length
-        ).toBe(6);
-      } else {
-        expect(newStats.compilation.emittedAssets.size).toBe(6);
-      }
+      expect(newStats.compilation.emittedAssets.size).toBe(6);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
         'assets'
