@@ -131,30 +131,6 @@ it('validation', () => {
   }).toThrowErrorMatchingSnapshot();
 
   expect(() => {
-    new JsonMinimizerPlugin({ cache: true });
-  }).not.toThrow();
-
-  expect(() => {
-    new JsonMinimizerPlugin({ cache: false });
-  }).not.toThrow();
-
-  expect(() => {
-    new JsonMinimizerPlugin({ cache: 'path/to/cache/directory' });
-  }).not.toThrow();
-
-  expect(() => {
-    new JsonMinimizerPlugin({ cache: {} });
-  }).toThrowErrorMatchingSnapshot();
-
-  expect(() => {
-    new JsonMinimizerPlugin({ cacheKeys() {} });
-  }).not.toThrow();
-
-  expect(() => {
-    new JsonMinimizerPlugin({ cacheKeys: 'test' });
-  }).toThrowErrorMatchingSnapshot();
-
-  expect(() => {
     new JsonMinimizerPlugin({ unknown: true });
   }).toThrowErrorMatchingSnapshot();
   /* eslint-enable no-new */

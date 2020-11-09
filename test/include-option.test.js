@@ -6,7 +6,6 @@ import {
   getErrors,
   getWarnings,
   readAssets,
-  removeCache,
 } from './helpers';
 
 describe('include option', () => {
@@ -16,11 +15,7 @@ describe('include option', () => {
     const testJsonId = './include-exclude/*.json';
 
     compiler = getCompiler(testJsonId);
-
-    return Promise.all([removeCache()]);
   });
-
-  afterEach(() => Promise.all([removeCache()]));
 
   it('should match snapshot for a single RegExp value include', async () => {
     new JsonMinimizerPlugin({
