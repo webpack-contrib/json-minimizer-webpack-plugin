@@ -29,20 +29,20 @@ Then add the plugin to your `webpack` configuration. For example:
 **webpack.config.js**
 
 ```js
-const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   module: {
     loaders: [
       {
         test: /\.json/i,
-        type: 'javascript/auto',
+        type: "javascript/auto",
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[ext]',
+              name: "[name].[ext]",
             },
           },
         ],
@@ -53,8 +53,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          context: path.resolve(__dirname, 'dist'),
-          from: './src/*.json',
+          context: path.resolve(__dirname, "dist"),
+          from: "./src/*.json",
         },
       ],
     }),
@@ -154,7 +154,7 @@ module.exports = {
     minimizer: [
       new JsonMinimizerPlugin({
         minimizerOptions: {
-          space: '\t',
+          space: "\t",
         },
       }),
     ],

@@ -1,13 +1,13 @@
-import JsonMinimizerPlugin from '../src';
+import JsonMinimizerPlugin from "../src";
 
-it('validation', () => {
+it("validation", () => {
   /* eslint-disable no-new */
   expect(() => {
     new JsonMinimizerPlugin({ test: /foo/ });
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ test: 'foo' });
+    new JsonMinimizerPlugin({ test: "foo" });
   }).not.toThrow();
 
   expect(() => {
@@ -19,11 +19,11 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ test: ['foo', 'bar'] });
+    new JsonMinimizerPlugin({ test: ["foo", "bar"] });
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ test: [/foo/, 'bar'] });
+    new JsonMinimizerPlugin({ test: [/foo/, "bar"] });
   }).not.toThrow();
 
   expect(() => {
@@ -39,7 +39,7 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ include: 'foo' });
+    new JsonMinimizerPlugin({ include: "foo" });
   }).not.toThrow();
 
   expect(() => {
@@ -51,11 +51,11 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ include: ['foo', 'bar'] });
+    new JsonMinimizerPlugin({ include: ["foo", "bar"] });
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ include: [/foo/, 'bar'] });
+    new JsonMinimizerPlugin({ include: [/foo/, "bar"] });
   }).not.toThrow();
 
   expect(() => {
@@ -71,7 +71,7 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ exclude: 'foo' });
+    new JsonMinimizerPlugin({ exclude: "foo" });
   }).not.toThrow();
 
   expect(() => {
@@ -83,11 +83,11 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ exclude: ['foo', 'bar'] });
+    new JsonMinimizerPlugin({ exclude: ["foo", "bar"] });
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ exclude: [/foo/, 'bar'] });
+    new JsonMinimizerPlugin({ exclude: [/foo/, "bar"] });
   }).not.toThrow();
 
   expect(() => {
@@ -103,7 +103,7 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ minimizerOptions: { replacer: ['test', 2] } });
+    new JsonMinimizerPlugin({ minimizerOptions: { replacer: ["test", 2] } });
   }).not.toThrow();
 
   expect(() => {
@@ -119,7 +119,7 @@ it('validation', () => {
   }).not.toThrow();
 
   expect(() => {
-    new JsonMinimizerPlugin({ minimizerOptions: { space: '  ' } });
+    new JsonMinimizerPlugin({ minimizerOptions: { space: "  " } });
   }).not.toThrow();
 
   expect(() => {
