@@ -1,14 +1,14 @@
-import { validate } from 'schema-utils';
-import serialize from 'serialize-javascript';
+import { validate } from "schema-utils";
+import serialize from "serialize-javascript";
 
-import schema from './options.json';
-import { minify as minifyFn } from './minify';
+import schema from "./options.json";
+import { minify as minifyFn } from "./minify";
 
 class JsonMinimizerPlugin {
   constructor(options = {}) {
     validate(schema, options, {
-      name: 'Json Minimizer Plugin',
-      baseDataPath: 'options',
+      name: "Json Minimizer Plugin",
+      baseDataPath: "options",
     });
 
     const {
@@ -33,7 +33,7 @@ class JsonMinimizerPlugin {
   }
 
   async optimize(compiler, compilation, assets) {
-    const cache = compilation.getCache('JsonMinimizerWebpackPlugin');
+    const cache = compilation.getCache("JsonMinimizerWebpackPlugin");
     const assetsForMinify = await Promise.all(
       Object.keys(assets)
         .filter((name) => {
@@ -134,7 +134,7 @@ class JsonMinimizerPlugin {
       });
 
       hooks.chunkHash.tap(pluginName, (chunk, hash) => {
-        hash.update('JsonMinimizerPlugin');
+        hash.update("JsonMinimizerPlugin");
         hash.update(data);
       });
 
@@ -149,12 +149,12 @@ class JsonMinimizerPlugin {
 
       compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
         stats.hooks.print
-          .for('asset.info.minimized')
+          .for("asset.info.minimized")
           .tap(
-            'json-minimizer-webpack-plugin',
+            "json-minimizer-webpack-plugin",
             (minimized, { green, formatFlag }) =>
               // eslint-disable-next-line no-undefined
-              minimized ? green(formatFlag('minimized')) : undefined
+              minimized ? green(formatFlag("minimized")) : undefined
           );
       });
     });

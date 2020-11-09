@@ -1,4 +1,4 @@
-import JsonMinimizerPlugin from '../src/index';
+import JsonMinimizerPlugin from "../src/index";
 
 import {
   compile,
@@ -6,7 +6,7 @@ import {
   getErrors,
   getWarnings,
   readAssets,
-} from './helpers';
+} from "./helpers";
 
 describe('when applied with "test" option', () => {
   let compiler;
@@ -14,19 +14,19 @@ describe('when applied with "test" option', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    const testJsonId = './test/foo-[0-4].json';
+    const testJsonId = "./test/foo-[0-4].json";
 
     compiler = getCompiler(testJsonId);
   });
 
-  it('matches snapshot with empty value', async () => {
+  it("matches snapshot with empty value", async () => {
     new JsonMinimizerPlugin().apply(compiler);
 
     const stats = await compile(compiler);
 
-    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
-    expect(getErrors(stats)).toMatchSnapshot('errors');
-    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot("assets");
+    expect(getErrors(stats)).toMatchSnapshot("errors");
+    expect(getWarnings(stats)).toMatchSnapshot("warnings");
   });
 
   it('matches snapshot for a single "test" value (RegExp)', async () => {
@@ -36,9 +36,9 @@ describe('when applied with "test" option', () => {
 
     const stats = await compile(compiler);
 
-    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
-    expect(getErrors(stats)).toMatchSnapshot('errors');
-    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot("assets");
+    expect(getErrors(stats)).toMatchSnapshot("errors");
+    expect(getWarnings(stats)).toMatchSnapshot("warnings");
   });
 
   it('matches snapshot for multiple "test" value (RegExp)', async () => {
@@ -48,8 +48,8 @@ describe('when applied with "test" option', () => {
 
     const stats = await compile(compiler);
 
-    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot('assets');
-    expect(getErrors(stats)).toMatchSnapshot('errors');
-    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+    expect(readAssets(compiler, stats, /\.json$/i)).toMatchSnapshot("assets");
+    expect(getErrors(stats)).toMatchSnapshot("errors");
+    expect(getWarnings(stats)).toMatchSnapshot("warnings");
   });
 });
