@@ -1,5 +1,4 @@
 import { validate } from "schema-utils";
-import serialize from "serialize-javascript";
 
 import schema from "./options.json";
 import { minify as minifyFn } from "./minify";
@@ -125,19 +124,6 @@ class JsonMinimizerPlugin {
     const pluginName = this.constructor.name;
 
     compiler.hooks.compilation.tap(pluginName, (compilation) => {
-      const hooks = compiler.webpack.javascript.JavascriptModulesPlugin.getCompilationHooks(
-        compilation
-      );
-
-      const data = serialize({
-        jsonMinimizerOptions: this.options.minimizerOptions,
-      });
-
-      hooks.chunkHash.tap(pluginName, (chunk, hash) => {
-        hash.update("JsonMinimizerPlugin");
-        hash.update(data);
-      });
-
       compilation.hooks.processAssets.tapPromise(
         {
           name: pluginName,
