@@ -43,15 +43,10 @@ export default function getCompiler(jsonFixture, config = {}) {
                 ? [
                     {
                       test: /\.json$/i,
-                      type: "javascript/auto",
-                      use: [
-                        {
-                          loader: "file-loader",
-                          options: {
-                            name: "[name].[ext]",
-                          },
-                        },
-                      ],
+                      type: "asset/resource",
+                      generator: {
+                        filename: "[name][ext]",
+                      },
                     },
                   ]
                 : []
