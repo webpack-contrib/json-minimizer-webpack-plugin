@@ -66,6 +66,13 @@ And run `webpack` via your preferred method.
 
 ## Options
 
+|                    Name                     |                  Type                   |              Default              | Description                                                                                                                    |
+| :-----------------------------------------: | :-------------------------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------------------- |
+|             **[`test`](#test)**             | `String\|RegExp\|Array<String\|RegExp>` |        `/\.json(\?.*)?$/i`        | Test to match files against.                                                                                                   |
+|          **[`include`](#include)**          | `String\|RegExp\|Array<String\|RegExp>` |            `undefined`            | Files to include.                                                                                                              |
+|          **[`exclude`](#exclude)**          | `String\|RegExp\|Array<String\|RegExp>` |            `undefined`            | Files to exclude.                                                                                                              |
+| **[`minimizerOptions`](#minimizeroptions)** |                `Object`                 | `{ replacer: null, space: null }` | `JSON.stringify()` [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify). |
+
 ### `test`
 
 Type: `String|RegExp|Array<String|RegExp>` - default: `/\.json(\?.*)?$/i`
