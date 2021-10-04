@@ -5,6 +5,7 @@ exports[`validation 1`] = `
  - options.test should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#test
    Details:
     * options.test should be an array:
       [RegExp | non-empty string, ...]
@@ -21,6 +22,7 @@ exports[`validation 2`] = `
  - options.test should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#test
    Details:
     * options.test[0] should be one of these:
       RegExp | non-empty string
@@ -35,6 +37,7 @@ exports[`validation 3`] = `
  - options.include should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#include
    Details:
     * options.include should be an array:
       [RegExp | non-empty string, ...]
@@ -51,6 +54,7 @@ exports[`validation 4`] = `
  - options.include should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#include
    Details:
     * options.include[0] should be one of these:
       RegExp | non-empty string
@@ -65,6 +69,7 @@ exports[`validation 5`] = `
  - options.exclude should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#exclude
    Details:
     * options.exclude should be an array:
       [RegExp | non-empty string, ...]
@@ -81,6 +86,7 @@ exports[`validation 6`] = `
  - options.exclude should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
    -> Filtering rules.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#exclude
    Details:
     * options.exclude[0] should be one of these:
       RegExp | non-empty string
@@ -94,7 +100,8 @@ exports[`validation 7`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.minimizerOptions should be an object:
    object { replacer?, space? }
-   -> Options for \`jsonMinimizerOptions\`."
+   -> Options for \`jsonMinimizerOptions\`.
+   -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#minimizeroptions"
 `;
 
 exports[`validation 8`] = `
