@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v3.1.1...v3.2.0) (2021-12-06)
+
+
+### Features
+
+* added types ([97c21b7](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/commit/97c21b7ab0ecab1454d034051f47b2e73582a3d7))
+
 ### [3.1.1](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v3.1.0...v3.1.1) (2021-11-17)
 
 
