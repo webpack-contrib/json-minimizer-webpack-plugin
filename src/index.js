@@ -3,9 +3,51 @@ import { validate } from "schema-utils";
 import schema from "./options.json";
 import { minify as minifyFn } from "./minify";
 
+/** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
+/** @typedef {import("webpack").Compiler} Compiler */
+/** @typedef {import("webpack").Compilation} Compilation */
+/** @typedef {import("webpack").Asset} Asset */
+/** @typedef {import("webpack").WebpackError} WebpackError */
+
+/** @typedef {RegExp | string} Rule */
+
+/** @typedef {Rule[] | Rule} Rules */
+
+/**
+ * @typedef {Object} JSONOptions
+ * @property {(this: any, key: string, value: any) => any | (number | string)[] | null} [replacer]
+ * @property {string | number} [space]
+ */
+
+/**
+ * @typedef {Object} BasePluginOptions
+ * @property {Rules} [test]
+ * @property {Rules} [include]
+ * @property {Rules} [exclude]
+ * @property {JSONOptions} [minimizerOptions]
+ */
+
+/**
+ * @typedef {Object} MinimizedResult
+ * @property {string} code
+ */
+
+/**
+ * @typedef {Object} InternalOptions
+ * @property {string} input
+ * @property {JSONOptions} [minimizerOptions]
+ */
+
+/**
+ * @typedef {BasePluginOptions} InternalPluginOptions
+ */
+
 class JsonMinimizerPlugin {
+  /**
+   * @param {BasePluginOptions} [options]
+   */
   constructor(options = {}) {
-    validate(schema, options, {
+    validate(/** @type {Schema} */ (schema), options, {
       name: "Json Minimizer Plugin",
       baseDataPath: "options",
     });
@@ -17,6 +59,10 @@ class JsonMinimizerPlugin {
       exclude,
     } = options;
 
+    /**
+     * @private
+     * @type {InternalPluginOptions}
+     */
     this.options = {
       test,
       include,
@@ -25,18 +71,31 @@ class JsonMinimizerPlugin {
     };
   }
 
+  /**
+   * @param {any} error
+   * @param {string} file
+   * @param {string} context
+   * @returns {Error}
+   */
   static buildError(error, file, context) {
     return new Error(
       `"${file}" in "${context}" from Json Minimizer:\n${error}`
     );
   }
 
+  /**
+   * @private
+   * @param {Compiler} compiler
+   * @param {Compilation} compilation
+   * @param {Record<string, import("webpack").sources.Source>} assets
+   * @returns {Promise<void>}
+   */
   async optimize(compiler, compilation, assets) {
     const cache = compilation.getCache("JsonMinimizerWebpackPlugin");
     const assetsForMinify = await Promise.all(
       Object.keys(assets)
         .filter((name) => {
-          const { info } = compilation.getAsset(name);
+          const { info } = /** @type {Asset} */ (compilation.getAsset(name));
 
           // Skip double minimize assets from child compilation
           if (info.minimized) {
@@ -56,7 +115,9 @@ class JsonMinimizerPlugin {
           return true;
         })
         .map(async (name) => {
-          const { info, source } = compilation.getAsset(name);
+          const { info, source } = /** @type {Asset} */ (
+            compilation.getAsset(name)
+          );
 
           const eTag = cache.getLazyHashedEtag(source);
           const cacheItem = cache.getItemCache(name, eTag);
@@ -86,17 +147,21 @@ class JsonMinimizerPlugin {
               input = input.toString();
             }
 
+            /**
+             * @type {InternalOptions}
+             */
             const options = {
               input,
-              minimizerOptions: { ...this.options.minimizerOptions },
-              minify: this.options.minify,
+              minimizerOptions: this.options.minimizerOptions,
             };
 
             try {
               output = await minifyFn(options);
             } catch (error) {
               compilation.errors.push(
-                JsonMinimizerPlugin.buildError(error, name, compiler.context)
+                /** @type {WebpackError} */ (
+                  JsonMinimizerPlugin.buildError(error, name, compiler.context)
+                )
               );
 
               return;
@@ -120,6 +185,10 @@ class JsonMinimizerPlugin {
     Promise.all(scheduledTasks);
   }
 
+  /**
+   * @param {Compiler} compiler
+   * @returns {void}
+   */
   apply(compiler) {
     const pluginName = this.constructor.name;
 
@@ -140,8 +209,11 @@ class JsonMinimizerPlugin {
           .tap(
             "json-minimizer-webpack-plugin",
             (minimized, { green, formatFlag }) =>
-              // eslint-disable-next-line no-undefined
-              minimized ? green(formatFlag("minimized")) : undefined
+              minimized
+                ? /** @type {Function} */ (green)(
+                    /** @type {Function} */ (formatFlag)("minimized")
+                  )
+                : ""
           );
       });
     });
