@@ -59,12 +59,13 @@ export type InternalPluginOptions = BasePluginOptions;
  */
 declare class JsonMinimizerPlugin {
   /**
+   * @private
    * @param {any} error
    * @param {string} file
    * @param {string} context
    * @returns {Error}
    */
-  static buildError(error: any, file: string, context: string): Error;
+  private static buildError;
   /**
    * @param {BasePluginOptions} [options]
    */
