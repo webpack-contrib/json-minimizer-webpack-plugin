@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v3.2.0...v3.3.0) (2021-12-16)
+
+
+### Features
+
+* removed cjs wrapper and generated types in commonjs format (`export =` and `namespaces` used in types), now you can directly use exported types ([#29](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/issues/29)) ([04140de](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/commit/04140de65cb471ea152dd67b5300f81239f34506))
+
 ## [3.2.0](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v3.1.1...v3.2.0) (2021-12-06)
 
 
