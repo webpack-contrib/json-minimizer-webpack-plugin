@@ -1,7 +1,7 @@
-import { validate } from "schema-utils";
+const { validate } = require("schema-utils");
 
-import schema from "./options.json";
-import { minify as minifyFn } from "./minify";
+const schema = require("./options.json");
+const { minify } = require("./minify");
 
 /** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
 /** @typedef {import("webpack").Compiler} Compiler */
@@ -156,7 +156,7 @@ class JsonMinimizerPlugin {
             };
 
             try {
-              output = await minifyFn(options);
+              output = await minify(options);
             } catch (error) {
               compilation.errors.push(
                 /** @type {WebpackError} */ (
@@ -220,4 +220,4 @@ class JsonMinimizerPlugin {
   }
 }
 
-export default JsonMinimizerPlugin;
+module.exports = JsonMinimizerPlugin;
