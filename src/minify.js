@@ -25,4 +25,4 @@ const minify = async (options) => {
   return { code: result };
 };
 
-module.exports.minify = minify;
+module.exports = { minify };

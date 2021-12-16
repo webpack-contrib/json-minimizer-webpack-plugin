@@ -1,31 +1,4 @@
-export default JsonMinimizerPlugin;
-export type Schema = import("schema-utils/declarations/validate").Schema;
-export type Compiler = import("webpack").Compiler;
-export type Compilation = import("webpack").Compilation;
-export type Asset = import("webpack").Asset;
-export type WebpackError = import("webpack").WebpackError;
-export type Rule = RegExp | string;
-export type Rules = Rule[] | Rule;
-export type JSONOptions = {
-  replacer?:
-    | ((this: any, key: string, value: any) => any | (number | string)[] | null)
-    | undefined;
-  space?: string | number | undefined;
-};
-export type BasePluginOptions = {
-  test?: Rules | undefined;
-  include?: Rules | undefined;
-  exclude?: Rules | undefined;
-  minimizerOptions?: JSONOptions | undefined;
-};
-export type MinimizedResult = {
-  code: string;
-};
-export type InternalOptions = {
-  input: string;
-  minimizerOptions?: JSONOptions | undefined;
-};
-export type InternalPluginOptions = BasePluginOptions;
+export = JsonMinimizerPlugin;
 /** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
@@ -59,13 +32,12 @@ export type InternalPluginOptions = BasePluginOptions;
  */
 declare class JsonMinimizerPlugin {
   /**
-   * @private
    * @param {any} error
    * @param {string} file
    * @param {string} context
    * @returns {Error}
    */
-  private static buildError;
+  static buildError(error: any, file: string, context: string): Error;
   /**
    * @param {BasePluginOptions} [options]
    */
@@ -89,3 +61,46 @@ declare class JsonMinimizerPlugin {
    */
   apply(compiler: Compiler): void;
 }
+declare namespace JsonMinimizerPlugin {
+  export {
+    Schema,
+    Compiler,
+    Compilation,
+    Asset,
+    WebpackError,
+    Rule,
+    Rules,
+    JSONOptions,
+    BasePluginOptions,
+    MinimizedResult,
+    InternalOptions,
+    InternalPluginOptions,
+  };
+}
+type Compiler = import("webpack").Compiler;
+type BasePluginOptions = {
+  test?: Rules | undefined;
+  include?: Rules | undefined;
+  exclude?: Rules | undefined;
+  minimizerOptions?: JSONOptions | undefined;
+};
+type Schema = import("schema-utils/declarations/validate").Schema;
+type Compilation = import("webpack").Compilation;
+type Asset = import("webpack").Asset;
+type WebpackError = import("webpack").WebpackError;
+type Rule = RegExp | string;
+type Rules = Rule[] | Rule;
+type JSONOptions = {
+  replacer?:
+    | ((this: any, key: string, value: any) => any | (number | string)[] | null)
+    | undefined;
+  space?: string | number | undefined;
+};
+type MinimizedResult = {
+  code: string;
+};
+type InternalOptions = {
+  input: string;
+  minimizerOptions?: JSONOptions | undefined;
+};
+type InternalPluginOptions = BasePluginOptions;
