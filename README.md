@@ -21,7 +21,19 @@ This plugin uses [JSON.stringify()](https://developer.mozilla.org/ru/docs/Web/Ja
 To begin, you'll need to install `json-minimizer-webpack-plugin`:
 
 ```console
-$ npm install json-minimizer-webpack-plugin --save-dev
+npm install json-minimizer-webpack-plugin --save-dev
+```
+
+or
+
+```console
+yarn add -D compression-webpack-plugin
+```
+
+or
+
+```console
+pnpm add -D compression-webpack-plugin
 ```
 
 Then add the plugin to your `webpack` configuration. For example:
