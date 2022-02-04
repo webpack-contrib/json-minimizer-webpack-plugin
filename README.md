@@ -27,13 +27,13 @@ npm install json-minimizer-webpack-plugin --save-dev
 or
 
 ```console
-yarn add -D compression-webpack-plugin
+yarn add -D json-minimizer-webpack-plugin
 ```
 
 or
 
 ```console
-pnpm add -D compression-webpack-plugin
+pnpm add -D json-minimizer-webpack-plugin
 ```
 
 Then add the plugin to your `webpack` configuration. For example:
