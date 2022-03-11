@@ -14,7 +14,7 @@
 
 # json-minimizer-webpack-plugin
 
-This plugin uses [JSON.stringify()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to minify your JSON.
+This plugin uses [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to minify your JSON.
 
 ## Getting Started
 
@@ -78,16 +78,20 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-|                    Name                     |                  Type                   |              Default              | Description                                                                                                                    |
-| :-----------------------------------------: | :-------------------------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------------------- |
-|             **[`test`](#test)**             | `String\|RegExp\|Array<String\|RegExp>` |        `/\.json(\?.*)?$/i`        | Test to match files against.                                                                                                   |
-|          **[`include`](#include)**          | `String\|RegExp\|Array<String\|RegExp>` |            `undefined`            | Files to include.                                                                                                              |
-|          **[`exclude`](#exclude)**          | `String\|RegExp\|Array<String\|RegExp>` |            `undefined`            | Files to exclude.                                                                                                              |
-| **[`minimizerOptions`](#minimizeroptions)** |                `Object`                 | `{ replacer: null, space: null }` | `JSON.stringify()` [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify). |
+- **[`test`](#test)**
+- **[`include`](#include)**
+- **[`exclude`](#exclude)**
+- **[`minimizerOptions`](#minimizeroptions)**
 
 ### `test`
 
-Type: `String|RegExp|Array<String|RegExp>` - default: `/\.json(\?.*)?$/i`
+Type:
+
+```ts
+type test = string | RegExp | Array<string | RegExp>;
+```
+
+Default: `/\.json(\?.*)?$/i`
 
 Test to match files against.
 
@@ -106,7 +110,12 @@ module.exports = {
 
 ### `include`
 
-Type: `String|RegExp|Array<String|RegExp>`
+Type:
+
+```ts
+type include = string | RegExp | Array<string | RegExp>;
+```
+
 Default: `undefined`
 
 Files to include.
@@ -128,7 +137,12 @@ module.exports = {
 
 ### `exclude`
 
-Type: `String|RegExp|Array<String|RegExp>`
+Type:
+
+```ts
+type exclude = string | RegExp | Array<string | RegExp>;
+```
+
 Default: `undefined`
 
 Files to exclude.
@@ -150,10 +164,18 @@ module.exports = {
 
 ### `minimizerOptions`
 
-Type: `Object`
+Type:
+
+```ts
+type minimizerOptions = {
+  space?: string | number;
+  replacer?: null | Function;
+};
+```
+
 Default: `{ replacer: null, space: null }`
 
-`JSON.stringify()` [options](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+`JSON.stringify()` [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
 
 ```js
 module.exports = {
