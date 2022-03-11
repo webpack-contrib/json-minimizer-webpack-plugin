@@ -168,8 +168,8 @@ Type:
 
 ```ts
 type minimizerOptions = {
-  space?: string | number;
-  replacer?: null | Function;
+  space?: null | string | number;
+  replacer?: null | Function | Array<string | number>;
 };
 ```
 
