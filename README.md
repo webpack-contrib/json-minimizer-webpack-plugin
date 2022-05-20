@@ -6,7 +6,6 @@
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
 [![cover][cover]][cover-url]
 [![chat][chat]][chat-url]
@@ -206,8 +205,6 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [npm-url]: https://npmjs.com/package/json-minimizer-webpack-plugin
 [node]: https://img.shields.io/node/v/json-minimizer-webpack-plugin.svg
 [node-url]: https://nodejs.org
-[deps]: https://david-dm.org/webpack-contrib/json-minimizer-webpack-plugin.svg
-[deps-url]: https://david-dm.org/webpack-contrib/json-minimizer-webpack-plugin
 [tests]: https://github.com/webpack-contrib/json-minimizer-webpack-plugin/workflows/json-minimizer-webpack-plugin/badge.svg
 [tests-url]: https://github.com/webpack-contrib/json-minimizer-webpack-plugin/actions
 [cover]: https://codecov.io/gh/webpack-contrib/json-minimizer-webpack-plugin/branch/master/graph/badge.svg
