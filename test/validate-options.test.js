@@ -1,4 +1,4 @@
-import JsonMinimizerPlugin from "../src";
+const JsonMinimizerPlugin = require("../src");
 
 it("validation", () => {
   /* eslint-disable no-new */

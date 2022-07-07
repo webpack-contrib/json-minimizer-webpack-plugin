@@ -1,12 +1,12 @@
-import JsonMinimizerPlugin from "../src/index";
+const JsonMinimizerPlugin = require("../src/index");
 
-import {
+const {
   compile,
   getCompiler,
   getErrors,
   getWarnings,
   readAssets,
-} from "./helpers";
+} = require("./helpers");
 
 describe('when applied with "test" option', () => {
   let compiler;

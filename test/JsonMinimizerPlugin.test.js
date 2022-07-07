@@ -1,16 +1,16 @@
-import path from "path";
+const path = require("path");
 
-import JsonMinimizerPlugin from "../src/index";
+const JsonMinimizerPlugin = require("../src/index");
 
-import {
+const {
   compile,
   getCompiler,
   getErrors,
   getWarnings,
   readAssets,
   ModifyExistingAsset,
-  EmitNewAsset,
-} from "./helpers";
+  EmitNewAsset
+} = require("./helpers");
 
 describe("JsonMinimizerPlugin", () => {
   it("should work (without options)", async () => {
