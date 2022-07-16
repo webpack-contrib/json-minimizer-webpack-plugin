@@ -9,7 +9,7 @@ const {
   getWarnings,
   readAssets,
   ModifyExistingAsset,
-  EmitNewAsset
+  EmitNewAsset,
 } = require("./helpers");
 
 describe("JsonMinimizerPlugin", () => {
