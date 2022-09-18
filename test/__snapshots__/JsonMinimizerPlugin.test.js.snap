@@ -12,7 +12,7 @@ exports[`JsonMinimizerPlugin should emit error when an empty file: warnings 1`] 
 exports[`JsonMinimizerPlugin should emit error when broken json syntax: errors 1`] = `
 [
   "Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:
-SyntaxError: Unexpected token s in JSON at position 5",
+SyntaxError: Unexpected token s in JSON at position 4",
 ]
 `;
 
