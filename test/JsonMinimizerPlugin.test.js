@@ -104,23 +104,17 @@ describe("JsonMinimizerPlugin", () => {
     const stats = await compile(compiler);
     const statsErrors = getErrors(stats);
 
-    expect(
-      statsErrors[0].includes(
-        `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`
-      )
-    ).toBeTruthy;
+    expect(statsErrors[0]).toContain(
+      `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`
+    );
     if (process.version.startsWith("v19")) {
-      expect(
-        statsErrors[0].includes(
-          `SyntaxError: SyntaxError: Expected property name or '}' in JSON at position 4`
-        )
-      ).toBeTruthy;
+      expect(statsErrors[0]).toContain(
+        `SyntaxError: SyntaxError: Expected property name or '}' in JSON at position 4`
+      );
     } else {
-      expect(
-        statsErrors[0].includes(
-          `SyntaxError: Unexpected token s in JSON at position 4`
-        )
-      ).toBeTruthy();
+      expect(statsErrors[0]).toContain(
+        `SyntaxError: Unexpected token s in JSON at position 4`
+      );
     }
 
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
