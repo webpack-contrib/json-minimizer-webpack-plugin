@@ -109,11 +109,11 @@ describe("JsonMinimizerPlugin", () => {
     );
     if (process.version.startsWith("v19")) {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: SyntaxError: Expected property name or '}' in JSON at position 5`
+        `SyntaxError: Expected property name or '}' in JSON at position 4`
       );
     } else {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: Unexpected token s in JSON at position 5`
+        `SyntaxError: Unexpected token s in JSON at position 4`
       );
     }
 
