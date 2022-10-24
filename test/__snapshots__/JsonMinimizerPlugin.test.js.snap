@@ -9,13 +9,6 @@ SyntaxError: Unexpected end of JSON input",
 
 exports[`JsonMinimizerPlugin should emit error when an empty file: warnings 1`] = `[]`;
 
-exports[`JsonMinimizerPlugin should emit error when broken json syntax: errors 1`] = `
-[
-  "Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:
-SyntaxError: Unexpected token s in JSON at position 4",
-]
-`;
-
 exports[`JsonMinimizerPlugin should emit error when broken json syntax: warnings 1`] = `[]`;
 
 exports[`JsonMinimizerPlugin should run plugin against assets added later by plugins: assets 1`] = `
