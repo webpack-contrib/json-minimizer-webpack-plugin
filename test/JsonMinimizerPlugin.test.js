@@ -107,7 +107,11 @@ describe("JsonMinimizerPlugin", () => {
     expect(statsErrors[0]).toContain(
       `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`
     );
-    if (process.version.startsWith("v19")) {
+
+    if (
+      process.version.startsWith("v19") ||
+      process.version.startsWith("v20")
+    ) {
       expect(statsErrors[0]).toContain(
         `SyntaxError: Expected property name or '}' in JSON at position 4`
       );
