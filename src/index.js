@@ -9,7 +9,8 @@ const { minify } = require("./minify");
 /** @typedef {import("webpack").Asset} Asset */
 /** @typedef {import("webpack").WebpackError} WebpackError */
 
-/** @typedef {string | RegExp | string[] | RegExp[]} Rule */
+/** @typedef {RegExp | string} Rule */
+/** @typedef {Rule[] | Rule} Rules */
 
 /**
  * @typedef {Object} JSONOptions
