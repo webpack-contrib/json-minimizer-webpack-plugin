@@ -4,7 +4,8 @@ export = JsonMinimizerPlugin;
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
 /** @typedef {import("webpack").WebpackError} WebpackError */
-/** @typedef {string | RegExp | string[] | RegExp[]} Rule */
+/** @typedef {RegExp | string} Rule */
+/** @typedef {Rule[] | Rule} Rules */
 /**
  * @typedef {Object} JSONOptions
  * @property {(this: any, key: string, value: any) => any | (number | string)[] | null} [replacer]
@@ -68,6 +69,7 @@ declare namespace JsonMinimizerPlugin {
     Asset,
     WebpackError,
     Rule,
+    Rules,
     JSONOptions,
     BasePluginOptions,
     MinimizedResult,
@@ -86,7 +88,8 @@ type Schema = import("schema-utils/declarations/validate").Schema;
 type Compilation = import("webpack").Compilation;
 type Asset = import("webpack").Asset;
 type WebpackError = import("webpack").WebpackError;
-type Rule = string | RegExp | string[] | RegExp[];
+type Rule = RegExp | string;
+type Rules = Rule[] | Rule;
 type JSONOptions = {
   replacer?:
     | ((this: any, key: string, value: any) => any | (number | string)[] | null)
