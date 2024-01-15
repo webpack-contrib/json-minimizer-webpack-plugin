@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v4.0.0...v5.0.0) (2024-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum supported Node.js version is `18.12.0` ([53b80b5](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/commit/53b80b5d5501c5b8cb60d12697de80a1ab25988b))
+
 ## [4.0.0](https://github.com/webpack-contrib/json-minimizer-webpack-plugin/compare/v3.3.0...v4.0.0) (2022-05-17)
 
 

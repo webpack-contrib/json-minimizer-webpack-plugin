@@ -1,6 +1,6 @@
 {
   "name": "json-minimizer-webpack-plugin",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "json minimizer plugin for Webpack",
   "license": "MIT",
   "repository": "webpack-contrib/json-minimizer-webpack-plugin",
@@ -27,7 +27,7 @@
     "security": "npm audit --security",
     "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
     "lint:js": "eslint --cache .",
-    "lint:spelling": "cspell \"**/*.*\"",
+    "lint:spelling": "cspell --no-must-find-files --cache --quiet \"**/*.*\"",
     "lint:types": "tsc --pretty --noEmit",
     "lint": "npm-run-all -l -p \"lint:**\"",
     "fix:js": "npm run lint:js -- --fix",
