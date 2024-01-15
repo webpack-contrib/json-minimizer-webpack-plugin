@@ -109,8 +109,8 @@ describe("JsonMinimizerPlugin", () => {
     );
 
     if (
-      process.version.startsWith("v19") ||
-      process.version.startsWith("v20")
+      process.version.startsWith("v20") ||
+      process.version.startsWith("v21")
     ) {
       expect(statsErrors[0]).toContain(
         `SyntaxError: Expected property name or '}' in JSON at position 4`,
