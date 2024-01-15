@@ -78,7 +78,7 @@ class JsonMinimizerPlugin {
    */
   static buildError(error, file, context) {
     return new Error(
-      `"${file}" in "${context}" from Json Minimizer:\n${error}`
+      `"${file}" in "${context}" from Json Minimizer:\n${error}`,
     );
   }
 
@@ -105,7 +105,7 @@ class JsonMinimizerPlugin {
             !compiler.webpack.ModuleFilenameHelpers.matchObject.bind(
               // eslint-disable-next-line no-undefined
               undefined,
-              this.options
+              this.options,
             )(name)
           ) {
             return false;
@@ -123,7 +123,7 @@ class JsonMinimizerPlugin {
           const output = await cacheItem.getPromise();
 
           return { name, info, inputSource: source, output, cacheItem };
-        })
+        }),
     );
 
     const { RawSource } = compiler.webpack.sources;
@@ -160,7 +160,7 @@ class JsonMinimizerPlugin {
               compilation.errors.push(
                 /** @type {WebpackError} */ (
                   JsonMinimizerPlugin.buildError(error, name, compiler.context)
-                )
+                ),
               );
 
               return;
@@ -177,7 +177,7 @@ class JsonMinimizerPlugin {
           const { source } = output;
 
           compilation.updateAsset(name, source, newInfo);
-        })()
+        })(),
       );
     }
 
@@ -199,7 +199,7 @@ class JsonMinimizerPlugin {
             compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
           additionalAssets: true,
         },
-        (assets) => this.optimize(compiler, compilation, assets)
+        (assets) => this.optimize(compiler, compilation, assets),
       );
 
       compilation.hooks.statsPrinter.tap(pluginName, (stats) => {
@@ -210,9 +210,9 @@ class JsonMinimizerPlugin {
             (minimized, { green, formatFlag }) =>
               minimized
                 ? /** @type {Function} */ (green)(
-                    /** @type {Function} */ (formatFlag)("minimized")
+                    /** @type {Function} */ (formatFlag)("minimized"),
                   )
-                : ""
+                : "",
           );
       });
     });

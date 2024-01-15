@@ -23,7 +23,7 @@ export default function loader() {
 
   const childCompiler = this._compilation.createChildCompiler(
     `preloader`,
-    this.options
+    this.options,
   );
 
   new PreCopyPlugin().apply(childCompiler);

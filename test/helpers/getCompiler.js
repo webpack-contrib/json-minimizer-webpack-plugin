@@ -35,7 +35,7 @@ export default function getCompiler(jsonFixture, config = {}) {
                     ],
                   }),
                 ]
-              : []
+              : [],
           ),
           module: {
             rules: [].concat(
@@ -49,11 +49,11 @@ export default function getCompiler(jsonFixture, config = {}) {
                       },
                     },
                   ]
-                : []
+                : [],
             ),
           },
           ...config,
-        }
+        },
   );
 
   if (!config.outputFileSystem) {
