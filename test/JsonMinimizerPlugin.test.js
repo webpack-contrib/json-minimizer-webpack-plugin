@@ -77,7 +77,7 @@ describe("JsonMinimizerPlugin", () => {
               {
                 loader: path.resolve(
                   __dirname,
-                  "./helpers/emitAssetInChildCompilationLoader"
+                  "./helpers/emitAssetInChildCompilationLoader",
                 ),
               },
             ],
@@ -105,19 +105,19 @@ describe("JsonMinimizerPlugin", () => {
     const statsErrors = getErrors(stats);
 
     expect(statsErrors[0]).toContain(
-      `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`
+      `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`,
     );
 
     if (
-      process.version.startsWith("v19") ||
-      process.version.startsWith("v20")
+      process.version.startsWith("v20") ||
+      process.version.startsWith("v21")
     ) {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: Expected property name or '}' in JSON at position 4`
+        `SyntaxError: Expected property name or '}' in JSON at position 4`,
       );
     } else {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: Unexpected token s in JSON at position 4`
+        `SyntaxError: Unexpected token s in JSON at position 4`,
       );
     }
 
@@ -149,7 +149,7 @@ describe("JsonMinimizerPlugin", () => {
       expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets"
+        "assets",
       );
       expect(getWarnings(newStats)).toMatchSnapshot("errors");
       expect(getErrors(newStats)).toMatchSnapshot("warnings");
@@ -183,7 +183,7 @@ describe("JsonMinimizerPlugin", () => {
       expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets"
+        "assets",
       );
       expect(getWarnings(newStats)).toMatchSnapshot("errors");
       expect(getErrors(newStats)).toMatchSnapshot("warnings");
@@ -217,7 +217,7 @@ describe("JsonMinimizerPlugin", () => {
       expect(newStats.compilation.emittedAssets.size).toBe(0);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets"
+        "assets",
       );
       expect(getWarnings(newStats)).toMatchSnapshot("errors");
       expect(getErrors(newStats)).toMatchSnapshot("warnings");
@@ -254,7 +254,7 @@ describe("JsonMinimizerPlugin", () => {
       expect(newStats.compilation.emittedAssets.size).toBe(2);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets"
+        "assets",
       );
       expect(getWarnings(newStats)).toMatchSnapshot("errors");
       expect(getErrors(newStats)).toMatchSnapshot("warnings");
@@ -288,7 +288,7 @@ describe("JsonMinimizerPlugin", () => {
       expect(newStats.compilation.emittedAssets.size).toBe(6);
 
       expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets"
+        "assets",
       );
       expect(getWarnings(newStats)).toMatchSnapshot("errors");
       expect(getErrors(newStats)).toMatchSnapshot("warnings");

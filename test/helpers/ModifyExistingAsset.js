@@ -11,7 +11,7 @@ export default class ExistingCommentsFile {
       compilation.hooks.additionalAssets.tap(plugin, () => {
         // eslint-disable-next-line no-param-reassign
         compilation.assets[this.options.name] = new RawSource(
-          JSON.stringify({ modified: true })
+          JSON.stringify({ modified: true }),
         );
       });
     });

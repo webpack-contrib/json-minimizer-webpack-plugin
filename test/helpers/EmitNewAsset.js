@@ -26,9 +26,9 @@ export default class EmitNewAsset {
   "secretBase": "Super tower",
   "active": true
 }
-            `)
+            `),
           );
-        }
+        },
       );
     });
   }

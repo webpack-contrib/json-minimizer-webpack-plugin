@@ -77,14 +77,8 @@ declare namespace JsonMinimizerPlugin {
     InternalPluginOptions,
   };
 }
-type Compiler = import("webpack").Compiler;
-type BasePluginOptions = {
-  test?: Rule | undefined;
-  include?: Rule | undefined;
-  exclude?: Rule | undefined;
-  minimizerOptions?: JSONOptions | undefined;
-};
 type Schema = import("schema-utils/declarations/validate").Schema;
+type Compiler = import("webpack").Compiler;
 type Compilation = import("webpack").Compilation;
 type Asset = import("webpack").Asset;
 type WebpackError = import("webpack").WebpackError;
@@ -95,6 +89,12 @@ type JSONOptions = {
     | ((this: any, key: string, value: any) => any | (number | string)[] | null)
     | undefined;
   space?: string | number | undefined;
+};
+type BasePluginOptions = {
+  test?: Rule | undefined;
+  include?: Rule | undefined;
+  exclude?: Rule | undefined;
+  minimizerOptions?: JSONOptions | undefined;
 };
 type MinimizedResult = {
   code: string;
