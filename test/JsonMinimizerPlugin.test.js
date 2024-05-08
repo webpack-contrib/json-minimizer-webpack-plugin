@@ -108,10 +108,11 @@ describe("JsonMinimizerPlugin", () => {
       `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`,
     );
 
-    if (
-      process.version.startsWith("v20") ||
-      process.version.startsWith("v21")
-    ) {
+    const match = process.version.match(
+      /^v(\d{1,2})\.(\d{1,2})\.(\d{1,2})(?:-([0-9A-Za-z-.]+))?(?:\+([0-9A-Za-z-.]+))?$/,
+    );
+
+    if (parseInt(match[1], 10) >= 20) {
       expect(statsErrors[0]).toContain(
         `SyntaxError: Expected property name or '}' in JSON at position 4`,
       );
