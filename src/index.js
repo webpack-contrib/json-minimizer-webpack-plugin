@@ -1,13 +1,13 @@
 const { validate } = require("schema-utils");
 
 const schema = require("./options.json");
-const { minify } = require("./minify");
+const { minify: internalMinify } = require("./minify");
 
 /** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
-/** @typedef {import("webpack").WebpackError} WebpackError */
+/** @typedef {import("webpack").WebpackError} WebpackError*/
 
 /** @typedef {RegExp | string} Rule */
 /** @typedef {Rule[] | Rule} Rules */
@@ -38,12 +38,12 @@ const { minify } = require("./minify");
  */
 
 /**
- * @typedef {BasePluginOptions} InternalPluginOptions
+ * @typedef {BasePluginOptions} PluginOptions
  */
 
 class JsonMinimizerPlugin {
   /**
-   * @param {BasePluginOptions} [options]
+   * @param {PluginOptions} [options]
    */
   constructor(options = {}) {
     validate(/** @type {Schema} */ (schema), options, {
@@ -60,7 +60,7 @@ class JsonMinimizerPlugin {
 
     /**
      * @private
-     * @type {InternalPluginOptions}
+     * @type {PluginOptions}
      */
     this.options = {
       test,
@@ -155,7 +155,7 @@ class JsonMinimizerPlugin {
             };
 
             try {
-              output = await minify(options);
+              output = await internalMinify(options);
             } catch (error) {
               compilation.errors.push(
                 /** @type {WebpackError} */ (
