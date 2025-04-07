@@ -3,7 +3,7 @@ export = JsonMinimizerPlugin;
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
-/** @typedef {import("webpack").WebpackError} WebpackError */
+/** @typedef {import("webpack").WebpackError} WebpackError*/
 /** @typedef {RegExp | string} Rule */
 /** @typedef {Rule[] | Rule} Rules */
 /**
