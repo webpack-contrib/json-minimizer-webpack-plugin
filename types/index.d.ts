@@ -3,7 +3,7 @@ export = JsonMinimizerPlugin;
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
-/** @typedef {import("webpack").WebpackError} WebpackError */
+/** @typedef {import("webpack").WebpackError} WebpackError*/
 /** @typedef {RegExp | string} Rule */
 /** @typedef {Rule[] | Rule} Rules */
 /**
@@ -28,7 +28,7 @@ export = JsonMinimizerPlugin;
  * @property {JSONOptions} [minimizerOptions]
  */
 /**
- * @typedef {BasePluginOptions} InternalPluginOptions
+ * @typedef {BasePluginOptions} PluginOptions
  */
 declare class JsonMinimizerPlugin {
   /**
@@ -39,12 +39,12 @@ declare class JsonMinimizerPlugin {
    */
   static buildError(error: any, file: string, context: string): Error;
   /**
-   * @param {BasePluginOptions} [options]
+   * @param {PluginOptions} [options]
    */
-  constructor(options?: BasePluginOptions | undefined);
+  constructor(options?: PluginOptions);
   /**
    * @private
-   * @type {InternalPluginOptions}
+   * @type {PluginOptions}
    */
   private options;
   /**
@@ -74,7 +74,7 @@ declare namespace JsonMinimizerPlugin {
     BasePluginOptions,
     MinimizedResult,
     InternalOptions,
-    InternalPluginOptions,
+    PluginOptions,
   };
 }
 type Schema = import("schema-utils/declarations/validate").Schema;
@@ -103,4 +103,4 @@ type InternalOptions = {
   input: string;
   minimizerOptions?: JSONOptions | undefined;
 };
-type InternalPluginOptions = BasePluginOptions;
+type PluginOptions = BasePluginOptions;
