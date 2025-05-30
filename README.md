@@ -13,7 +13,7 @@
 
 # json-minimizer-webpack-plugin
 
-This plugin uses [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to minify your JSON.
+This plugin uses [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to minify your JSON files during the build process.
 
 ## Getting Started
 
@@ -73,7 +73,7 @@ module.exports = {
 };
 ```
 
-And run `webpack` via your preferred method.
+Finally, run `webpack` using the method you normally use (e.g., via CLI or an npm script).
 
 ## Options
 
@@ -117,7 +117,7 @@ type include = string | RegExp | Array<string | RegExp>;
 
 Default: `undefined`
 
-Files to include.
+Files to include for minimization.
 
 **webpack.config.js**
 
@@ -144,7 +144,7 @@ type exclude = string | RegExp | Array<string | RegExp>;
 
 Default: `undefined`
 
-Files to exclude.
+Files to exclude from minimization.
 
 **webpack.config.js**
 
@@ -193,7 +193,8 @@ module.exports = {
 
 ## Contributing
 
-Please take a moment to read our contributing guidelines if you haven't yet done so.
+We welcome all contributions!
+If you're new here, please take a moment to review our contributing guidelines before submitting issues or pull requests.
 
 [CONTRIBUTING](./.github/CONTRIBUTING.md)
 
