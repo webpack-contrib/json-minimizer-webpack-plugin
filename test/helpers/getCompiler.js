@@ -1,9 +1,15 @@
-import path from "path";
+import path from "node:path";
 
-import webpack from "webpack";
-import { createFsFromVolume, Volume } from "memfs";
 import CopyPlugin from "copy-webpack-plugin";
+import { Volume, createFsFromVolume } from "memfs";
+import webpack from "webpack";
 
+/**
+ * Create a webpack compiler instance for testing
+ * @param {string} jsonFixture Path to JSON fixture file
+ * @param {object} config Additional webpack configuration
+ * @returns {import('webpack').Compiler} Webpack compiler instance
+ */
 export default function getCompiler(jsonFixture, config = {}) {
   const compiler = webpack(
     Array.isArray(config)
@@ -23,7 +29,7 @@ export default function getCompiler(jsonFixture, config = {}) {
             filename: "[name].js",
             chunkFilename: "[id].[name].js",
           },
-          plugins: [].concat(
+          plugins: [
             jsonFixture
               ? [
                   new CopyPlugin({
@@ -36,9 +42,9 @@ export default function getCompiler(jsonFixture, config = {}) {
                   }),
                 ]
               : [],
-          ),
+          ].flat(),
           module: {
-            rules: [].concat(
+            rules: [
               !jsonFixture
                 ? [
                     {
@@ -50,7 +56,7 @@ export default function getCompiler(jsonFixture, config = {}) {
                     },
                   ]
                 : [],
-            ),
+            ].flat(),
           },
           ...config,
         },

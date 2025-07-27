@@ -3,15 +3,15 @@
 /** @typedef {import("./index.js").MinimizedResult} MinimizedResult */
 
 const defaultMinimizerOptions = {
-  // eslint-disable-next-line no-undefined
   replacer: undefined,
-  // eslint-disable-next-line no-undefined
+
   space: undefined,
 };
 
 /**
- * @param {InternalOptions} options
- * @returns {Promise<MinimizedResult>}
+ * Minify JSON content with specified options
+ * @param {InternalOptions} options The options containing input and minimizer options
+ * @returns {Promise<MinimizedResult>} Promise that resolves with minimized JSON result
  */
 const minify = async (options) => {
   const { input, minimizerOptions } = options;

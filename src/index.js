@@ -1,40 +1,40 @@
 const { validate } = require("schema-utils");
 
-const schema = require("./options.json");
 const { minify: internalMinify } = require("./minify");
+const schema = require("./options.json");
 
 /** @typedef {import("schema-utils/declarations/validate").Schema} Schema */
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
-/** @typedef {import("webpack").WebpackError} WebpackError*/
+/** @typedef {import("webpack").WebpackError} WebpackError */
 
 /** @typedef {RegExp | string} Rule */
 /** @typedef {Rule[] | Rule} Rules */
 
 /**
- * @typedef {Object} JSONOptions
- * @property {(this: any, key: string, value: any) => any | (number | string)[] | null} [replacer]
- * @property {string | number} [space]
+ * @typedef {object} JSONOptions
+ * @property {(this: unknown, key: string, value: unknown) => unknown | (number | string)[] | null=} replacer JSON replacer function or array
+ * @property {string | number=} space JSON space parameter for formatting
  */
 
 /**
- * @typedef {Object} BasePluginOptions
- * @property {Rule} [test]
- * @property {Rule} [include]
- * @property {Rule} [exclude]
- * @property {JSONOptions} [minimizerOptions]
+ * @typedef {object} BasePluginOptions
+ * @property {Rule=} test Test pattern for matching files
+ * @property {Rule=} include Include pattern for files
+ * @property {Rule=} exclude Exclude pattern for files
+ * @property {JSONOptions=} minimizerOptions Options for JSON minimization
  */
 
 /**
- * @typedef {Object} MinimizedResult
- * @property {string} code
+ * @typedef {object} MinimizedResult
+ * @property {string} code The minimized JSON code
  */
 
 /**
- * @typedef {Object} InternalOptions
- * @property {string} input
- * @property {JSONOptions} [minimizerOptions]
+ * @typedef {object} InternalOptions
+ * @property {string} input The input JSON string to minimize
+ * @property {JSONOptions=} minimizerOptions Options for JSON minimization
  */
 
 /**
@@ -43,7 +43,8 @@ const { minify: internalMinify } = require("./minify");
 
 class JsonMinimizerPlugin {
   /**
-   * @param {PluginOptions} [options]
+   * Create a new JsonMinimizerPlugin instance
+   * @param {PluginOptions} options Plugin configuration options
    */
   constructor(options = {}) {
     validate(/** @type {Schema} */ (schema), options, {
@@ -59,7 +60,6 @@ class JsonMinimizerPlugin {
     } = options;
 
     /**
-     * @private
      * @type {PluginOptions}
      */
     this.options = {
@@ -71,10 +71,11 @@ class JsonMinimizerPlugin {
   }
 
   /**
-   * @param {any} error
-   * @param {string} file
-   * @param {string} context
-   * @returns {Error}
+   * Build an error message for JSON minimization failures
+   * @param {unknown} error The error that occurred
+   * @param {string} file The file being processed
+   * @param {string} context The compilation context
+   * @returns {Error} Formatted error message
    */
   static buildError(error, file, context) {
     return new Error(
@@ -83,11 +84,11 @@ class JsonMinimizerPlugin {
   }
 
   /**
-   * @private
-   * @param {Compiler} compiler
-   * @param {Compilation} compilation
-   * @param {Record<string, import("webpack").sources.Source>} assets
-   * @returns {Promise<void>}
+   * Optimize assets by minimizing JSON files
+   * @param {Compiler} compiler The webpack compiler instance
+   * @param {Compilation} compilation The webpack compilation instance
+   * @param {Record<string, import("webpack").sources.Source>} assets The assets to process
+   * @returns {Promise<void>} Promise that resolves when optimization is complete
    */
   async optimize(compiler, compilation, assets) {
     const cache = compilation.getCache("JsonMinimizerWebpackPlugin");
@@ -103,7 +104,6 @@ class JsonMinimizerPlugin {
 
           if (
             !compiler.webpack.ModuleFilenameHelpers.matchObject.bind(
-              // eslint-disable-next-line no-undefined
               undefined,
               this.options,
             )(name)
@@ -185,7 +185,8 @@ class JsonMinimizerPlugin {
   }
 
   /**
-   * @param {Compiler} compiler
+   * Apply the plugin to the webpack compiler
+   * @param {Compiler} compiler The webpack compiler instance
    * @returns {void}
    */
   apply(compiler) {
@@ -209,8 +210,10 @@ class JsonMinimizerPlugin {
             "json-minimizer-webpack-plugin",
             (minimized, { green, formatFlag }) =>
               minimized
-                ? /** @type {Function} */ (green)(
-                    /** @type {Function} */ (formatFlag)("minimized"),
+                ? /** @type {(text: string) => string} */ (green)(
+                    /** @type {(flag: string) => string} */ (formatFlag)(
+                      "minimized",
+                    ),
                   )
                 : "",
           );

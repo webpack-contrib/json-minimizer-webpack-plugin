@@ -1,15 +1,15 @@
-import path from "path";
+import path from "node:path";
 
 import JsonMinimizerPlugin from "../src/index";
 
 import {
+  EmitNewAsset,
+  ModifyExistingAsset,
   compile,
   getCompiler,
   getErrors,
   getWarnings,
   readAssets,
-  ModifyExistingAsset,
-  EmitNewAsset,
 } from "./helpers";
 
 describe("JsonMinimizerPlugin", () => {
@@ -105,20 +105,20 @@ describe("JsonMinimizerPlugin", () => {
     const statsErrors = getErrors(stats);
 
     expect(statsErrors[0]).toContain(
-      `Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:`,
+      'Error: "broken-json-syntax.json" in "/test/fixtures" from Json Minimizer:',
     );
 
     const match = process.version.match(
       /^v(\d{1,2})\.(\d{1,2})\.(\d{1,2})(?:-([0-9A-Za-z-.]+))?(?:\+([0-9A-Za-z-.]+))?$/,
     );
 
-    if (parseInt(match[1], 10) >= 20) {
+    if (Number.parseInt(match[1], 10) >= 20) {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: Expected property name or '}' in JSON at position 4`,
+        "SyntaxError: Expected property name or '}' in JSON at position 4",
       );
     } else {
       expect(statsErrors[0]).toContain(
-        `SyntaxError: Unexpected token s in JSON at position 4`,
+        "SyntaxError: Unexpected token s in JSON at position 4",
       );
     }
 
@@ -144,18 +144,18 @@ describe("JsonMinimizerPlugin", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
 
-    await new Promise(async (resolve) => {
-      const newStats = await compile(compiler);
+    await new Promise((resolve) => {
+      compile(compiler).then((newStats) => {
+        expect(newStats.compilation.emittedAssets.size).toBe(0);
 
-      expect(newStats.compilation.emittedAssets.size).toBe(0);
+        expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
+          "assets",
+        );
+        expect(getWarnings(newStats)).toMatchSnapshot("errors");
+        expect(getErrors(newStats)).toMatchSnapshot("warnings");
 
-      expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets",
-      );
-      expect(getWarnings(newStats)).toMatchSnapshot("errors");
-      expect(getErrors(newStats)).toMatchSnapshot("warnings");
-
-      resolve();
+        resolve();
+      });
     });
   });
 
@@ -178,18 +178,18 @@ describe("JsonMinimizerPlugin", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
 
-    await new Promise(async (resolve) => {
-      const newStats = await compile(compiler);
+    await new Promise((resolve) => {
+      compile(compiler).then((newStats) => {
+        expect(newStats.compilation.emittedAssets.size).toBe(0);
 
-      expect(newStats.compilation.emittedAssets.size).toBe(0);
+        expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
+          "assets",
+        );
+        expect(getWarnings(newStats)).toMatchSnapshot("errors");
+        expect(getErrors(newStats)).toMatchSnapshot("warnings");
 
-      expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets",
-      );
-      expect(getWarnings(newStats)).toMatchSnapshot("errors");
-      expect(getErrors(newStats)).toMatchSnapshot("warnings");
-
-      resolve();
+        resolve();
+      });
     });
   });
 
@@ -212,18 +212,18 @@ describe("JsonMinimizerPlugin", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
 
-    await new Promise(async (resolve) => {
-      const newStats = await compile(compiler);
+    await new Promise((resolve) => {
+      compile(compiler).then((newStats) => {
+        expect(newStats.compilation.emittedAssets.size).toBe(0);
 
-      expect(newStats.compilation.emittedAssets.size).toBe(0);
+        expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
+          "assets",
+        );
+        expect(getWarnings(newStats)).toMatchSnapshot("errors");
+        expect(getErrors(newStats)).toMatchSnapshot("warnings");
 
-      expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets",
-      );
-      expect(getWarnings(newStats)).toMatchSnapshot("errors");
-      expect(getErrors(newStats)).toMatchSnapshot("warnings");
-
-      resolve();
+        resolve();
+      });
     });
   });
 
@@ -249,18 +249,18 @@ describe("JsonMinimizerPlugin", () => {
     new ModifyExistingAsset({ name: "cache.json" }).apply(compiler);
     new ModifyExistingAsset({ name: "cache-1.json" }).apply(compiler);
 
-    await new Promise(async (resolve) => {
-      const newStats = await compile(compiler);
+    await new Promise((resolve) => {
+      compile(compiler).then((newStats) => {
+        expect(newStats.compilation.emittedAssets.size).toBe(2);
 
-      expect(newStats.compilation.emittedAssets.size).toBe(2);
+        expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
+          "assets",
+        );
+        expect(getWarnings(newStats)).toMatchSnapshot("errors");
+        expect(getErrors(newStats)).toMatchSnapshot("warnings");
 
-      expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets",
-      );
-      expect(getWarnings(newStats)).toMatchSnapshot("errors");
-      expect(getErrors(newStats)).toMatchSnapshot("warnings");
-
-      resolve();
+        resolve();
+      });
     });
   });
 
@@ -283,18 +283,18 @@ describe("JsonMinimizerPlugin", () => {
     expect(getErrors(stats)).toMatchSnapshot("errors");
     expect(getWarnings(stats)).toMatchSnapshot("warnings");
 
-    await new Promise(async (resolve) => {
-      const newStats = await compile(compiler);
+    await new Promise((resolve) => {
+      compile(compiler).then((newStats) => {
+        expect(newStats.compilation.emittedAssets.size).toBe(6);
 
-      expect(newStats.compilation.emittedAssets.size).toBe(6);
+        expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
+          "assets",
+        );
+        expect(getWarnings(newStats)).toMatchSnapshot("errors");
+        expect(getErrors(newStats)).toMatchSnapshot("warnings");
 
-      expect(readAssets(compiler, newStats, /\.json$/i)).toMatchSnapshot(
-        "assets",
-      );
-      expect(getWarnings(newStats)).toMatchSnapshot("errors");
-      expect(getErrors(newStats)).toMatchSnapshot("warnings");
-
-      resolve();
+        resolve();
+      });
     });
   });
 
