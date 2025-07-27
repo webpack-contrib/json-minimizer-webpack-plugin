@@ -3,60 +3,66 @@ export = JsonMinimizerPlugin;
 /** @typedef {import("webpack").Compiler} Compiler */
 /** @typedef {import("webpack").Compilation} Compilation */
 /** @typedef {import("webpack").Asset} Asset */
-/** @typedef {import("webpack").WebpackError} WebpackError*/
+/** @typedef {import("webpack").WebpackError} WebpackError */
 /** @typedef {RegExp | string} Rule */
 /** @typedef {Rule[] | Rule} Rules */
 /**
- * @typedef {Object} JSONOptions
- * @property {(this: any, key: string, value: any) => any | (number | string)[] | null} [replacer]
- * @property {string | number} [space]
+ * @typedef {object} JSONOptions
+ * @property {(this: unknown, key: string, value: unknown) => unknown | (number | string)[] | null=} replacer JSON replacer function or array
+ * @property {string | number=} space JSON space parameter for formatting
  */
 /**
- * @typedef {Object} BasePluginOptions
- * @property {Rule} [test]
- * @property {Rule} [include]
- * @property {Rule} [exclude]
- * @property {JSONOptions} [minimizerOptions]
+ * @typedef {object} BasePluginOptions
+ * @property {Rule=} test Test pattern for matching files
+ * @property {Rule=} include Include pattern for files
+ * @property {Rule=} exclude Exclude pattern for files
+ * @property {JSONOptions=} minimizerOptions Options for JSON minimization
  */
 /**
- * @typedef {Object} MinimizedResult
- * @property {string} code
+ * @typedef {object} MinimizedResult
+ * @property {string} code The minimized JSON code
  */
 /**
- * @typedef {Object} InternalOptions
- * @property {string} input
- * @property {JSONOptions} [minimizerOptions]
+ * @typedef {object} InternalOptions
+ * @property {string} input The input JSON string to minimize
+ * @property {JSONOptions=} minimizerOptions Options for JSON minimization
  */
 /**
  * @typedef {BasePluginOptions} PluginOptions
  */
 declare class JsonMinimizerPlugin {
   /**
-   * @param {any} error
-   * @param {string} file
-   * @param {string} context
-   * @returns {Error}
+   * Build an error message for JSON minimization failures
+   * @param {unknown} error The error that occurred
+   * @param {string} file The file being processed
+   * @param {string} context The compilation context
+   * @returns {Error} Formatted error message
    */
-  static buildError(error: any, file: string, context: string): Error;
+  static buildError(error: unknown, file: string, context: string): Error;
   /**
-   * @param {PluginOptions} [options]
+   * Create a new JsonMinimizerPlugin instance
+   * @param {PluginOptions} options Plugin configuration options
    */
   constructor(options?: PluginOptions);
   /**
-   * @private
    * @type {PluginOptions}
    */
-  private options;
+  options: PluginOptions;
   /**
-   * @private
-   * @param {Compiler} compiler
-   * @param {Compilation} compilation
-   * @param {Record<string, import("webpack").sources.Source>} assets
-   * @returns {Promise<void>}
+   * Optimize assets by minimizing JSON files
+   * @param {Compiler} compiler The webpack compiler instance
+   * @param {Compilation} compilation The webpack compilation instance
+   * @param {Record<string, import("webpack").sources.Source>} assets The assets to process
+   * @returns {Promise<void>} Promise that resolves when optimization is complete
    */
-  private optimize;
+  optimize(
+    compiler: Compiler,
+    compilation: Compilation,
+    assets: Record<string, import("webpack").sources.Source>,
+  ): Promise<void>;
   /**
-   * @param {Compiler} compiler
+   * Apply the plugin to the webpack compiler
+   * @param {Compiler} compiler The webpack compiler instance
    * @returns {void}
    */
   apply(compiler: Compiler): void;
@@ -85,22 +91,53 @@ type WebpackError = import("webpack").WebpackError;
 type Rule = RegExp | string;
 type Rules = Rule[] | Rule;
 type JSONOptions = {
+  /**
+   * JSON replacer function or array
+   */
   replacer?:
-    | ((this: any, key: string, value: any) => any | (number | string)[] | null)
+    | ((
+        this: unknown,
+        key: string,
+        value: unknown,
+      ) => unknown | (number | string)[] | null)
     | undefined;
-  space?: string | number | undefined;
+  /**
+   * JSON space parameter for formatting
+   */
+  space?: (string | number) | undefined;
 };
 type BasePluginOptions = {
+  /**
+   * Test pattern for matching files
+   */
   test?: Rule | undefined;
+  /**
+   * Include pattern for files
+   */
   include?: Rule | undefined;
+  /**
+   * Exclude pattern for files
+   */
   exclude?: Rule | undefined;
+  /**
+   * Options for JSON minimization
+   */
   minimizerOptions?: JSONOptions | undefined;
 };
 type MinimizedResult = {
+  /**
+   * The minimized JSON code
+   */
   code: string;
 };
 type InternalOptions = {
+  /**
+   * The input JSON string to minimize
+   */
   input: string;
+  /**
+   * Options for JSON minimization
+   */
   minimizerOptions?: JSONOptions | undefined;
 };
 type PluginOptions = BasePluginOptions;
