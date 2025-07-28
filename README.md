@@ -40,8 +40,8 @@ Then add the plugin to your `webpack` configuration. For example:
 **webpack.config.js**
 
 ```js
-const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
 
 module.exports = {
   module: {
@@ -87,7 +87,7 @@ Finally, run `webpack` using the method you normally use (e.g., via CLI or an np
 Type:
 
 ```ts
-type test = string | RegExp | Array<string | RegExp>;
+type test = string | RegExp | (string | RegExp)[];
 ```
 
 Default: `/\.json(\?.*)?$/i`
@@ -112,7 +112,7 @@ module.exports = {
 Type:
 
 ```ts
-type include = string | RegExp | Array<string | RegExp>;
+type include = string | RegExp | (string | RegExp)[];
 ```
 
 Default: `undefined`
@@ -139,7 +139,7 @@ module.exports = {
 Type:
 
 ```ts
-type exclude = string | RegExp | Array<string | RegExp>;
+type exclude = string | RegExp | (string | RegExp)[];
 ```
 
 Default: `undefined`
@@ -165,11 +165,13 @@ module.exports = {
 
 Type:
 
+<!-- eslint-skip -->
+
 ```ts
-type minimizerOptions = {
+interface minimizerOptions {
   space?: null | string | number;
-  replacer?: null | Function | Array<string | number>;
-};
+  replacer?: null | Function | (string | number)[];
+}
 ```
 
 Default: `{ replacer: null, space: null }`

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`validation 1`] = `
+exports[`validation validation 1`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.test should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -17,7 +17,7 @@ exports[`validation 1`] = `
        * options.test should be a non-empty string."
 `;
 
-exports[`validation 2`] = `
+exports[`validation validation 2`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.test should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -32,7 +32,7 @@ exports[`validation 2`] = `
        * options.test[0] should be a non-empty string."
 `;
 
-exports[`validation 3`] = `
+exports[`validation validation 3`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.include should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -49,7 +49,7 @@ exports[`validation 3`] = `
        * options.include should be a non-empty string."
 `;
 
-exports[`validation 4`] = `
+exports[`validation validation 4`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.include should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -64,7 +64,7 @@ exports[`validation 4`] = `
        * options.include[0] should be a non-empty string."
 `;
 
-exports[`validation 5`] = `
+exports[`validation validation 5`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.exclude should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -81,7 +81,7 @@ exports[`validation 5`] = `
        * options.exclude should be a non-empty string."
 `;
 
-exports[`validation 6`] = `
+exports[`validation validation 6`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.exclude should be one of these:
    [RegExp | non-empty string, ...] | RegExp | non-empty string
@@ -96,7 +96,7 @@ exports[`validation 6`] = `
        * options.exclude[0] should be a non-empty string."
 `;
 
-exports[`validation 7`] = `
+exports[`validation validation 7`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options.minimizerOptions should be an object:
    object { replacer?, space? }
@@ -104,7 +104,7 @@ exports[`validation 7`] = `
    -> Read more at https://github.com/webpack-contrib/json-minimizer-webpack-plugin#minimizeroptions"
 `;
 
-exports[`validation 8`] = `
+exports[`validation validation 8`] = `
 "Invalid options object. Json Minimizer Plugin has been initialized using an options object that does not match the API schema.
  - options has an unknown property 'unknown'. These properties are valid:
    object { test?, include?, exclude?, minimizerOptions? }"

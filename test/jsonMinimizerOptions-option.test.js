@@ -51,7 +51,6 @@ describe('when applied with "minimizerOptions" option', () => {
       minimizerOptions: {
         replacer: (key, value) => {
           if (Array.isArray(value)) {
-            // eslint-disable-next-line no-undefined
             return undefined;
           }
 
