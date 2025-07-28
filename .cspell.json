@@ -1,8 +1,7 @@
 {
   "version": "0.2",
   "language": "en,en-gb",
-  "words": ["memfs", "pathinfo", "commitlint", "nodenext"],
-
+  "words": ["memfs", "pathinfo", "commitlint", "nodenext", "eslintcache"],
   "ignorePaths": [
     "CHANGELOG.md",
     "package.json",
